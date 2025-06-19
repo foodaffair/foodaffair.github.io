@@ -15,7 +15,7 @@
     header {
       background-color: #ff7043;
       color: white;
-      padding: 1.5rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
     nav a {
@@ -26,21 +26,31 @@
     }
     section {
       padding: 2rem 1rem;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: auto;
     }
+    .brand-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 2rem;
+    }
     .brand {
-      margin-bottom: 3rem;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 2rem;
+      flex: 1 1 300px;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fdfdfd;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     .brand img {
-      max-width: 150px;
+      max-width: 120px;
       margin-bottom: 1rem;
     }
     .buttons a {
       display: inline-block;
-      margin: 0.5rem 1rem 0.5rem 0;
+      margin: 0.3rem;
       padding: 0.5rem 1rem;
       background-color: #ff7043;
       color: white;
@@ -58,53 +68,53 @@
 <body>
   <header>
     <h1>Rendezvous Foods & Lifestyle</h1>
-    <p>Pure Veg | Vegan | Jain | Satvik</p>
+    <p>Where purity meets flavor – Pure Veg | Vegan | Jain | Satvik | Indo-Chinese</p>
     <nav>
-      <a href="#food-affair">Food Affair</a>
-      <a href="#jain-food-house">Jain Food House</a>
-      <a href="#wok-of-love">Wok Of Love</a>
+      <a href="#brands">Our Brands</a>
     </nav>
   </header>
 
   <section>
     <h2>About Us</h2>
-    <p>Rendezvous Foods & Lifestyle is home to some of Bangalore's finest pure vegetarian brands. We celebrate flavorful, clean, and inclusive food experiences across diverse cuisines and dietary preferences.</p>
+    <p>Welcome to Rendezvous Foods & Lifestyle — a proud home of premium vegetarian food brands in Bangalore. Our mission is to bring flavorful, clean, and inclusive dining experiences to all. From authentic North Indian delicacies to vibrant Indo-Chinese cuisine and strict Jain meals, each of our brands is built around purity, passion, and palate-pleasing perfection.</p>
   </section>
 
-  <section id="food-affair" class="brand">
-    <img src="https://via.placeholder.com/150?text=Food+Affair+Logo" alt="Food Affair Logo">
-    <h2>Food Affair</h2>
-    <p>Dine-In | Online Orders | Jain | Vegan | Satvik | Vaishnav Options</p>
-    <div class="buttons">
-      <a href="https://foodaffair.in" target="_blank">Order on Website</a>
-      <a href="https://www.zomato.com/bangalore/food-affair" target="_blank">Zomato</a>
-      <a href="https://www.swiggy.com/restaurants/food-affair" target="_blank">Swiggy</a>
+  <section id="brands" class="brand-section">
+    <div class="brand">
+      <img src="https://via.placeholder.com/150?text=Food+Affair+Logo" alt="Food Affair Logo">
+      <h2>Food Affair</h2>
+      <p>Dine-in | Online Orders | Jain, Vegan, Satvik, Vaishnav Options</p>
+      <div class="buttons">
+        <a href="https://foodaffair.in" target="_blank">Order on Website</a>
+        <a href="https://www.zomato.com/bangalore/food-affair" target="_blank">Zomato</a>
+        <a href="https://www.swiggy.com/restaurants/food-affair" target="_blank">Swiggy</a>
+      </div>
     </div>
-  </section>
 
-  <section id="jain-food-house" class="brand">
-    <img src="https://via.placeholder.com/150?text=Jain+Food+House" alt="Jain Food House Logo">
-    <h2>Jain Food House</h2>
-    <p>Strictly Jain cuisine. No onion, no garlic. Delivery only.</p>
-    <div class="buttons">
-      <a href="https://www.zomato.com/bangalore/jain-food-house" target="_blank">Zomato</a>
-      <a href="https://www.swiggy.com/restaurants/jain-food-house" target="_blank">Swiggy</a>
+    <div class="brand">
+      <img src="https://via.placeholder.com/150?text=Jain+Food+House" alt="Jain Food House Logo">
+      <h2>Jain Food House</h2>
+      <p>Strictly Jain cuisine — no onion, no garlic. Delivery only.</p>
+      <div class="buttons">
+        <a href="https://www.zomato.com/bangalore/jain-food-house" target="_blank">Zomato</a>
+        <a href="https://www.swiggy.com/restaurants/jain-food-house" target="_blank">Swiggy</a>
+      </div>
     </div>
-  </section>
 
-  <section id="wok-of-love" class="brand">
-    <img src="https://via.placeholder.com/150?text=Wok+Of+Love" alt="Wok Of Love Logo">
-    <h2>Wok Of Love</h2>
-    <p>Indo-Chinese Pure Veg. Big on flavor, 100% vegetarian.</p>
-    <div class="buttons">
-      <a href="https://www.zomato.com/bangalore/wok-of-love" target="_blank">Zomato</a>
-      <a href="https://www.swiggy.com/restaurants/wok-of-love" target="_blank">Swiggy</a>
+    <div class="brand">
+      <img src="https://via.placeholder.com/150?text=Wok+Of+Love" alt="Wok Of Love Logo">
+      <h2>Wok Of Love</h2>
+      <p>Pure Veg Indo-Chinese cuisine. Big flavors, guilt-free indulgence.</p>
+      <div class="buttons">
+        <a href="https://www.zomato.com/bangalore/wok-of-love" target="_blank">Zomato</a>
+        <a href="https://www.swiggy.com/restaurants/wok-of-love" target="_blank">Swiggy</a>
+      </div>
     </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Rendezvous Foods & Lifestyle | Bangalore, India</p>
-    <p>Pure Veg | Quality | Love</p>
+    <p>Crafted with care. Powered by purity.</p>
   </footer>
 </body>
 </html>
