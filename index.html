@@ -131,22 +131,73 @@
       text-align: center;
     }
   </style>
+<style>
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #6d4c41;
+      padding: 0.5rem;
+      text-align: center;
+      z-index: 1000;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    .overlay-content {
+      background: #fffaf2;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #6d4c41;
+    }
+</style>
+<script>
+  function showOverlay(id) {
+    document.getElementById(id).style.display = 'flex';
+  }
+  function closeOverlay(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
 </head>
 <body>
   <header>
     <h1>Rendezvous Foods & Lifestyle</h1>
     <p>A premium vegetarian restaurant group with multi-brand excellence — Jain, Vegan, Satvik, and Indo-Chinese specializations</p>
     <nav>
-      <a href="#brands">Our Brands</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <a href="#brands">Our Brands</a>
+  <a href="javascript:void(0)" onclick="showOverlay('about')">About</a>
+  <a href="javascript:void(0)" onclick="showOverlay('contact')">Contact</a>
+</nav>
   </header>
 
-  <section id="about">
+  <div id="about" class="overlay" onclick="closeOverlay('about')">
+  <div class="overlay-content" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeOverlay('about')">&times;</button>
     <h2>About Us</h2>
     <p>Rendezvous Foods & Lifestyle is a Bangalore-based pure vegetarian food group with a growing portfolio of restaurant brands. From authentic North Indian cuisine to strictly Jain meals and bold Indo-Chinese creations, we cater to diverse dietary preferences with unwavering commitment to purity, flavor, and innovation. With customer trust at our core, we are expanding into new concepts while retaining the essence of what makes each meal unforgettable.</p>
-  </section>
+  </div>
+</div>
 
   <section id="brands" class="brand-section">
     <div class="brand">
@@ -189,12 +240,15 @@
     <p>We’re cooking up something new! Stay tuned as we introduce fresh concepts that celebrate purity, taste, and innovation — only at Rendezvous Foods & Lifestyle.</p>
   </section>
 
-  <section id="contact" class="contact">
+  <div id="contact" class="overlay" onclick="closeOverlay('contact')">
+  <div class="overlay-content" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeOverlay('contact')">&times;</button>
     <h2>Contact Us</h2>
     <p>📍 89 Ambika Corner, 2nd Floor, 11th Main, BTM 4th Stage, Vijaya Bank Layout, Bengaluru, Karnataka 560076</p>
     <p>📞 +91 98862 99822</p>
     <p>📧 <a href="mailto:foodaffair2024@gmail.com">foodaffair2024@gmail.com</a></p>
-  </section>
+  </div>
+</div>
 
   <footer>
     <p>&copy; 2025 <strong style="color: #ffab91;">Rendezvous Foods & Lifestyle</strong> | Bangalore, India</p>
