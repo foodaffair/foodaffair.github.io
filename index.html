@@ -18,6 +18,12 @@
       padding: 2rem 1rem;
       text-align: center;
     }
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
     nav a {
       margin: 0 1rem;
       color: white;
@@ -43,10 +49,21 @@
       background-color: #fdfdfd;
       text-align: center;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .brand:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .brand h2 {
+      font-size: 1.75rem;
+      color: #d84315;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
     }
     .brand img {
-      max-width: 140px;
-      margin-bottom: 1rem;
+      display: none;
     }
     .buttons a {
       display: inline-block;
@@ -70,6 +87,24 @@
       font-size: 0.95rem;
       color: #555;
       margin-top: 0.5rem;
+    }
+    .coming-soon {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem;
+      background: #fff3e0;
+      border: 2px dashed #ffa726;
+      border-radius: 12px;
+    }
+    .coming-soon h2 {
+      font-size: 2rem;
+      color: #ef6c00;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .coming-soon p {
+      font-size: 1.1rem;
+      color: #6d4c41;
     }
     footer {
       background-color: #222;
@@ -95,7 +130,6 @@
 
   <section id="brands" class="brand-section">
     <div class="brand">
-      <img src="Original Logo.png" alt="Food Affair Logo">
       <h2>Food Affair</h2>
       <p>Dine-in | Online Orders | Jain, Vegan, Satvik, Vaishnav Options</p>
       <p><em>"Coz, food never breaks hearts!"</em></p>
@@ -112,7 +146,6 @@
     </div>
 
     <div class="brand">
-      <img src="https://via.placeholder.com/150?text=Jain+Food+House" alt="Jain Food House Logo">
       <h2>Jain Food House</h2>
       <p>Strictly Jain cuisine — no onion, no garlic. 100% pure, delivered to your doorstep.</p>
       <div class="buttons">
@@ -122,7 +155,6 @@
     </div>
 
     <div class="brand">
-      <img src="https://via.placeholder.com/150?text=Wok+Of+Love" alt="Wok Of Love Logo">
       <h2>Wok Of Love</h2>
       <p>Pure Veg Indo-Chinese delicacies — bold, fiery, and flavor-packed.</p>
       <div class="buttons">
@@ -132,8 +164,13 @@
     </div>
   </section>
 
+  <section class="coming-soon">
+    <h2>More Brands Coming Soon</h2>
+    <p>We’re cooking up something new! Stay tuned as we introduce fresh concepts that celebrate purity, taste, and innovation — only at Rendezvous Foods & Lifestyle.</p>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Rendezvous Foods & Lifestyle | Bangalore, India</p>
+    <p>&copy; 2025 <strong style="color: #ff8a65;">Rendezvous Foods & Lifestyle</strong> | Bangalore, India</p>
     <p>More brands coming soon. Built on taste. Backed by trust.</p>
   </footer>
 </body>
