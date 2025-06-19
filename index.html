@@ -9,11 +9,11 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fffefb;
+      background-color: #f9f9f9;
       color: #333;
     }
     header {
-      background: linear-gradient(to right, #d84315, #ff7043);
+      background-color: #37474f;
       color: white;
       padding: 2rem 1rem;
       text-align: center;
@@ -26,7 +26,7 @@
     }
     nav a {
       margin: 0 1rem;
-      color: white;
+      color: #ffcc80;
       text-decoration: none;
       font-weight: bold;
     }
@@ -46,30 +46,30 @@
       padding: 1rem;
       border-radius: 12px;
       background: #ffffff;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
     }
     .brand:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
     .brand h2 {
-      background: linear-gradient(to right, #ff7043, #ffa726);
-      color: white;
       font-size: 1.6rem;
       font-weight: bold;
-      padding: 0.5rem;
-      border-radius: 8px 8px 0 0;
-      margin: -1rem -1rem 1rem -1rem;
-      text-transform: uppercase;
+      margin-bottom: 1rem;
+      padding: 0.4rem;
+      border-radius: 8px;
+      color: white;
+      text-align: center;
     }
-    .brand p {
-      margin-bottom: 0.5rem;
-    }
+    .brand:nth-child(1) h2 { background-color: #c62828; } /* Food Affair - deep red */
+    .brand:nth-child(2) h2 { background-color: #2e7d32; } /* Jain Food House - green */
+    .brand:nth-child(3) h2 { background-color: #283593; } /* Wok Of Love - blue */
+
     .brand img {
       width: 100%;
-      max-height: 180px;
+      max-height: 160px;
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 1rem;
@@ -78,14 +78,14 @@
       display: inline-block;
       margin: 0.3rem 0.2rem;
       padding: 0.5rem 0.8rem;
-      background-color: #ff7043;
+      background-color: #546e7a;
       color: white;
       border-radius: 4px;
       text-decoration: none;
       font-size: 0.9rem;
     }
     .review {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #555;
       margin-top: 0.5rem;
     }
@@ -100,22 +100,22 @@
       text-align: center;
       margin-top: 4rem;
       padding: 2rem;
-      background: linear-gradient(to right, #fff3e0, #ffe0b2);
-      border: 2px dashed #ffa726;
+      background: #e0f2f1;
+      border: 2px dashed #009688;
       border-radius: 12px;
     }
     .coming-soon h2 {
       font-size: 2rem;
-      color: #ef6c00;
+      color: #00695c;
       text-transform: uppercase;
       margin-bottom: 1rem;
     }
     .coming-soon p {
       font-size: 1.1rem;
-      color: #6d4c41;
+      color: #4e342e;
     }
     footer {
-      background-color: #222;
+      background-color: #263238;
       color: #ccc;
       padding: 2rem 1rem;
       text-align: center;
@@ -139,7 +139,7 @@
   <section id="brands" class="brand-section">
     <div class="brand">
       <h2>Food Affair</h2>
-      <img src="https://source.unsplash.com/800x600/?indian-food" alt="Food Affair">
+      <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/abstract-1238247_960_720.jpg" alt="Food Affair">
       <p>Dine-in | Online Orders | Jain, Vegan, Satvik, Vaishnav Options</p>
       <p><em>"Coz, food never breaks hearts!"</em></p>
       <div class="buttons">
@@ -156,7 +156,7 @@
 
     <div class="brand">
       <h2>Jain Food House</h2>
-      <img src="https://source.unsplash.com/800x600/?jain-food" alt="Jain Food House">
+      <img src="https://cdn.pixabay.com/photo/2016/04/13/21/07/watercolor-1326013_960_720.jpg" alt="Jain Food House">
       <p>Strictly Jain cuisine — no onion, no garlic. 100% pure, delivered to your doorstep.</p>
       <div class="buttons">
         <a href="https://www.zomato.com/bangalore/jain-food-house-bannerghatta-road-bangalore" target="_blank">Zomato</a>
@@ -166,7 +166,7 @@
 
     <div class="brand">
       <h2>Wok Of Love</h2>
-      <img src="https://source.unsplash.com/800x600/?chinese-food" alt="Wok Of Love">
+      <img src="https://cdn.pixabay.com/photo/2020/04/21/06/36/texture-5069629_960_720.jpg" alt="Wok Of Love">
       <p>Pure Veg Indo-Chinese delicacies — bold, fiery, and flavor-packed.</p>
       <div class="buttons">
         <a href="https://www.zomato.com/bangalore/wok-of-love-bannerghatta-road-bangalore" target="_blank">Zomato</a>
@@ -181,7 +181,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 <strong style="color: #ff8a65;">Rendezvous Foods & Lifestyle</strong> | Bangalore, India</p>
+    <p>&copy; 2025 <strong style="color: #ffab91;">Rendezvous Foods & Lifestyle</strong> | Bangalore, India</p>
     <p>More brands coming soon. Built on taste. Backed by trust.</p>
   </footer>
 </body>
