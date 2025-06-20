@@ -49,23 +49,26 @@
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
+      text-align: center;
     }
     .brand:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
+    .brand img {
+      max-width: 100px;
+      max-height: 100px;
+      margin-bottom: 1rem;
+    }
     .brand h2 {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: bold;
       margin-bottom: 1rem;
+      background-color: #a98274;
       padding: 0.4rem;
       border-radius: 8px;
       color: white;
-      text-align: center;
     }
-    .brand:nth-child(1) h2 { background-color: #8d6e63; }
-    .brand:nth-child(2) h2 { background-color: #a1887f; }
-    .brand:nth-child(3) h2 { background-color: #5d4037; }
     .buttons a {
       display: inline-block;
       margin: 0.3rem 0.2rem;
@@ -130,8 +133,6 @@
       padding: 2rem 1rem;
       text-align: center;
     }
-  </style>
-<style>
     nav {
       position: sticky;
       top: 0;
@@ -170,100 +171,67 @@
       cursor: pointer;
       color: #6d4c41;
     }
-</style>
-<script>
-  function showOverlay(id) {
-    document.getElementById(id).style.display = 'flex';
-  }
-  function closeOverlay(id) {
-    document.getElementById(id).style.display = 'none';
-  }
-</script>
+    .carousel img {
+      scroll-snap-align: center;
+      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  </style>
+  <script>
+    function showOverlay(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeOverlay(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
 </head>
 <body>
   <header>
-    <h1>Rendezvous Foods & Lifestyle</h1>
-    <p>A premium vegetarian restaurant group with multi-brand excellence — Jain, Vegan, Satvik, and Indo-Chinese specializations</p>
-    <nav>
-  <a href="#brands">Our Brands</a>
-  <a href="javascript:void(0)" onclick="showOverlay('about')">About</a>
-  <a href="javascript:void(0)" onclick="showOverlay('contact')">Contact</a>
-</nav>
+    <img src="assets/images/rendezvous-banner.png" alt="Rendezvous Banner" style="max-width: 100%; height: auto; border-radius: 8px;">
   </header>
 
-  <div id="about" class="overlay" onclick="closeOverlay('about')">
-  <div class="overlay-content" onclick="event.stopPropagation()">
-    <button class="close-btn" onclick="closeOverlay('about')">&times;</button>
-    <h2>About Us</h2>
-    <p>Rendezvous Foods & Lifestyle is a Bangalore-based pure vegetarian food group with a growing portfolio of restaurant brands. From authentic North Indian cuisine to strictly Jain meals and bold Indo-Chinese creations, we cater to diverse dietary preferences with unwavering commitment to purity, flavor, and innovation. With customer trust at our core, we are expanding into new concepts while retaining the essence of what makes each meal unforgettable.</p>
-  </div>
-</div>
-
-  <section id="brands" class="brand-section">
-  <div class="brand">
-    <img src="assets/images/food_affair_logo.png" alt="Food Affair Logo" style="max-width: 160px; display: block; margin: 0 auto 1rem;">
-    <p>Dine-in | Online Orders | Jain, Vegan, Satvik, Vaishnav Options</p>
-    <p><em>"Coz, food never breaks hearts!"</em></p>
-    <div class="buttons">
-      <a href="http://food-affair.in" target="_blank">Order on Website</a>
-      <a href="https://www.zomato.com/bangalore/food-affair-1-btm-bangalore" target="_blank">Zomato</a>
-      <a href="https://www.swiggy.com/restaurants/food-affair-btm-layout-bangalore-229422" target="_blank">Swiggy</a>
-      <a href="https://www.eazydiner.com/bengaluru/food-affair-veg-family-restaurant-btm-south-bengaluru-669910" target="_blank">EazyDiner</a>
+  <section class="carousel" style="margin-top: 3rem; text-align: center;">
+    <h2 style="margin-bottom: 1rem; font-size: 1.8rem; color: #4e342e;">Some of Our Specialties</h2>
+    <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 1rem; padding: 1rem 0;">
+      <img src="assets/images/Bhindi Do Pyaza.jpg" alt="Bhindi Do Pyaza">
+      <img src="assets/images/Corn Cheese Balls.jpg" alt="Corn Cheese Balls">
+      <img src="assets/images/Cream Of Mushroom.jpg" alt="Cream Of Mushroom">
+      <img src="assets/images/Cream of Tomato.jpg" alt="Cream of Tomato">
+      <img src="assets/images/Dal Makhni.jpg" alt="Dal Makhni">
+      <img src="assets/images/Dal tadka.jpg" alt="Dal tadka">
+      <img src="assets/images/Gobi Amritsari.JPG" alt="Gobi Amritsari">
+      <img src="assets/images/Gobi Masala.jpg" alt="Gobi Masala">
+      <img src="assets/images/Green Salad.jpg" alt="Green Salad">
+      <img src="assets/images/Hara Bhara Kabab.jpg" alt="Hara Bhara Kabab">
+      <img src="assets/images/Kadhai Paneer 1.jpg" alt="Kadhai Paneer 1">
+      <img src="assets/images/Kadhai Paneer.jpg" alt="Kadhai Paneer">
+      <img src="assets/images/Kadhai Veg.jpg" alt="Kadhai Veg">
+      <img src="assets/images/Kathi Spring Rolls.jpg" alt="Kathi Spring Rolls">
+      <img src="assets/images/Khimchi Salad.JPG" alt="Khimchi Salad">
+      <img src="assets/images/Lassi.jpg" alt="Lassi">
+      <img src="assets/images/Makai Khash Tikki.JPG" alt="Makai Khash Tikki">
+      <img src="assets/images/Manchou Soup.jpg" alt="Manchou Soup">
+      <img src="assets/images/Mushroom Chilly.jpg" alt="Mushroom Chilly">
+      <img src="assets/images/Nimbu Pudina Shikanji.jpg" alt="Nimbu Pudina Shikanji">
+      <img src="assets/images/Paneer Cheese Balls.jpg" alt="Paneer Cheese Balls">
+      <img src="assets/images/Paneer Lababdar.jpg" alt="Paneer Lababdar">
+      <img src="assets/images/Paneer Pudina Tikka.jpg" alt="Paneer Pudina Tikka">
+      <img src="assets/images/Paneer Tikka.jpg" alt="Paneer Tikka">
+      <img src="assets/images/Pulav Dal Makhni Combo.jpg" alt="Pulav Dal Makhni Combo">
+      <img src="assets/images/Punjabi Bhatinda Kofta.jpg" alt="Punjabi Bhatinda Kofta">
+      <img src="assets/images/Red Pasta.jpg" alt="Red Pasta">
+      <img src="assets/images/Stuffed Tomato Salad.jpg" alt="Stuffed Tomato Salad">
+      <img src="assets/images/Tandoori Platter.jpg" alt="Tandoori Platter">
+      <img src="assets/images/thali.jpg" alt="thali">
+      <img src="assets/images/Veg Biryani Combo 1.jpg" alt="Veg Biryani Combo 1">
+      <img src="assets/images/Veg Biryani Combo.jpg" alt="Veg Biryani Combo">
+      <img src="assets/images/Veg Fried Rice Combo.jpg" alt="Veg Fried Rice Combo">
+      <img src="assets/images/Veg Hakka Noodles.jpg" alt="Veg Hakka Noodles">
+      <img src="assets/images/Veg Lollipop.jpg" alt="Veg Lollipop">
     </div>
-    <div class="review">⭐ 4.5 on Google (700+ reviews)</div>
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62203.1991042479!2d77.55130241701906!3d12.91209574783088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae157bfbcb8e75%3A0x8c8c02d2fc8b802f!2sFood%20Affair%20-%20Veg%20Family%20Restaurant!5e0!3m2!1sen!2sin!4v1718792481677!5m2!1sen!2sin" loading="lazy" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <div class="brand">
-    <img src="assets/images/Jain_Food_House_logo.png" alt="Jain Food House Logo" style="max-width: 160px; display: block; margin: 0 auto 1rem;">
-    <p>Strictly Jain cuisine — no onion, no garlic. 100% pure, delivered to your doorstep.</p>
-    <div class="buttons">
-      <a href="https://www.zomato.com/bangalore/jain-food-house-bannerghatta-road-bangalore" target="_blank">Zomato</a>
-      <a href="https://www.swiggy.com/city/bangalore/jain-food-court-vijaya-bank-colony-bilekahalli-rest532809" target="_blank">Swiggy</a>
-    </div>
-  </div>
-
-  <div class="brand">
-    <img src="assets/images/Wok-Of-Love-Final-Logo.png" alt="Wok Of Love Logo" style="max-width: 160px; display: block; margin: 0 auto 1rem;">
-    <p>Pure Veg Indo-Chinese delicacies — bold, fiery, and flavor-packed.</p>
-    <div class="buttons">
-      <a href="https://www.zomato.com/bangalore/wok-of-love-bannerghatta-road-bangalore" target="_blank">Zomato</a>
-      <a href="https://www.swiggy.com/city/bangalore/wok-of-love-btm-4th-stage-arekere-rest966202" target="_blank">Swiggy</a>
-    </div>
-  </div>
-</section>
-
-<section class="carousel" style="margin-top: 3rem; text-align: center;">
-  <h2 style="margin-bottom: 1rem; font-size: 1.8rem; color: #4e342e;">Some of Our Specialties</h2>
-  <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 1rem; padding: 1rem 0;">
-    <img src="assets/images/Gobhi Masala.jpg" alt="Gobhi Masala" style="height: 200px; scroll-snap-align: center; border-radius: 8px;">
-    <img src="assets/images/Paneer Tikka.jpg" alt="Paneer Tikka" style="height: 200px; scroll-snap-align: center; border-radius: 8px;">
-    <img src="assets/images/Fried Rice.jpg" alt="Fried Rice" style="height: 200px; scroll-snap-align: center; border-radius: 8px;">
-    <img src="assets/images/Schezwan Noodles.jpg" alt="Schezwan Noodles" style="height: 200px; scroll-snap-align: center; border-radius: 8px;">
-    <img src="assets/images/Dal Tadka.jpg" alt="Dal Tadka" style="height: 200px; scroll-snap-align: center; border-radius: 8px;">
-  </div>
-</section>
-
-  <section class="coming-soon">
-    <h2>More Brands Coming Soon</h2>
-    <p>We’re cooking up something new! Stay tuned as we introduce fresh concepts that celebrate purity, taste, and innovation — only at Rendezvous Foods & Lifestyle.</p>
   </section>
-
-  <div id="contact" class="overlay" onclick="closeOverlay('contact')">
-  <div class="overlay-content" onclick="event.stopPropagation()">
-    <button class="close-btn" onclick="closeOverlay('contact')">&times;</button>
-    <h2>Contact Us</h2>
-    <p>📍 89 Ambika Corner, 2nd Floor, 11th Main, BTM 4th Stage, Vijaya Bank Layout, Bengaluru, Karnataka 560076</p>
-    <p>📞 +91 98862 99822</p>
-    <p>📧 <a href="mailto:foodaffair2024@gmail.com">foodaffair2024@gmail.com</a></p>
-  </div>
-</div>
-
-  <footer>
-    <p>&copy; 2025 <strong style="color: #ffab91;">Rendezvous Foods & Lifestyle</strong> | Bangalore, India</p>
-    <p>More brands coming soon. Built on taste. Backed by trust.</p>
-  </footer>
 </body>
 </html>
