@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rendezvous Foods & Lifestyle</title>
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #fdf7f1;
       color: #3e2f1c;
     }
-    header {
+    nav {
+      position: sticky;
+      top: 0;
       background-color: #6d4c41;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      padding: 0.6rem 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 1000;
     }
     nav a {
-      margin: 0 1rem;
       color: #ffcc80;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    header {
+      width: 100%;
+      min-height: 350px;
+      background: url('assets/images/rendezvous-banner.png') center/cover no-repeat;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 1rem;
+      flex-direction: column;
     }
     section {
       padding: 2rem 1rem;
@@ -38,46 +48,40 @@
     .brand-section {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       gap: 2rem;
+      justify-content: space-between;
     }
     .brand {
       flex: 1 1 30%;
-      padding: 1rem;
-      border-radius: 12px;
       background: #fffaf2;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      padding: 1.5rem;
       text-align: center;
+      transition: 0.3s ease;
     }
     .brand:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     }
     .brand img {
-      max-width: 100px;
-      max-height: 100px;
+      max-width: 110px;
+      max-height: 110px;
+      object-fit: contain;
       margin-bottom: 1rem;
-    }
-    .brand h2 {
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      background-color: #a98274;
-      padding: 0.4rem;
-      border-radius: 8px;
-      color: white;
     }
     .buttons a {
       display: inline-block;
-      margin: 0.3rem 0.2rem;
-      padding: 0.5rem 0.8rem;
-      background-color: #6d4c41;
+      margin: 0.3rem 0.25rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.9rem;
+      background: #6d4c41;
       color: white;
       border-radius: 4px;
       text-decoration: none;
-      font-size: 0.9rem;
+    }
+    .buttons a:hover {
+      background: #5a3d34;
     }
     .review {
       font-size: 0.9rem;
@@ -91,111 +95,75 @@
       border-radius: 8px;
       margin-top: 1rem;
     }
-    .coming-soon {
-      text-align: center;
-      margin-top: 4rem;
-      padding: 2rem;
-      background: #fbe9e7;
-      border: 2px dashed #a1887f;
-      border-radius: 12px;
+    .carousel-wrapper {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 1rem 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
-    .coming-soon h2 {
-      font-size: 2rem;
-      color: #4e342e;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-    .coming-soon p {
-      font-size: 1.1rem;
-      color: #4e342e;
-    }
-    .contact {
-      background-color: #fff3e0;
-      padding: 2rem 1rem;
-      border-radius: 12px;
-      margin-top: 2rem;
-    }
-    .contact h2 {
-      text-align: center;
-      font-size: 2rem;
-      color: #6d4c41;
-      margin-bottom: 1rem;
-    }
-    .contact p {
-      font-size: 1rem;
-      color: #4e342e;
-      text-align: center;
-      margin: 0.5rem 0;
-    }
-    footer {
-      background-color: #4e342e;
-      color: #fbe9e7;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: #6d4c41;
-      padding: 0.5rem;
-      text-align: center;
-      z-index: 1000;
-    }
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-    }
-    .overlay-content {
-      background: #fffaf2;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 600px;
-      width: 90%;
-      position: relative;
-    }
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #6d4c41;
-    }
-    .carousel img {
-      scroll-snap-align: center;
-      border-radius: 8px;
+    .carousel-wrapper img {
       height: 180px;
-      object-fit: cover;
       flex-shrink: 0;
+      border-radius: 8px;
+      object-fit: cover;
+      scroll-snap-align: center;
+    }
+    .carousel-title {
+      font-size: 1.8rem;
+      color: #4e342e;
+      margin-bottom: 1rem;
+      text-align: center;
     }
   </style>
-  <script>
-    function showOverlay(id) {
-      document.getElementById(id).style.display = 'flex';
-    }
-    function closeOverlay(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-  </script>
 </head>
 <body>
-  <header>
-    <img src="assets/images/rendezvous-banner.png" alt="Rendezvous Banner" style="max-width: 100%; height: auto; border-radius: 8px;">
-  </header>
+  <nav>
+    <a href="#brands">Our Brands</a>
+    <a href="javascript:void(0)" onclick="showOverlay('about')">About</a>
+    <a href="javascript:void(0)" onclick="showOverlay('contact')">Contact</a>
+  </nav>
 
-  <section class="carousel" style="margin-top: 3rem; text-align: center;">
-    <h2 style="margin-bottom: 1rem; font-size: 1.8rem; color: #4e342e;">Some of Our Specialties</h2>
-    <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 1rem; padding: 1rem 0;">
+  <header></header>
+
+  <section id="brands" class="brand-section">
+    <div class="brand">
+      <img src="assets/images/food_affair_logo.png" alt="Food Affair logo">
+      <p>Dine‑in • Online • Jain, Vegan, Satvik options</p>
+      <div class="buttons">
+        <a href="http://food-affair.in" target="_blank">Website</a>
+        <a href="https://www.zomato.com/bangalore/food-affair-1-btm-bangalore" target="_blank">Zomato</a>
+        <a href="https://www.swiggy.com/restaurants/food-affair-btm-layout-bangalore-229422" target="_blank">Swiggy</a>
+        <a href="https://www.eazydiner.com/bengaluru/food-affair-veg-family-restaurant-btm-south-bengaluru-669910" target="_blank">EazyDiner</a>
+      </div>
+      <div class="review">⭐ 4.5 • 700+ Google reviews</div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62203.1991042479!2d77.55130241701906!3d12.91209574783088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae157bfbcb8e75%3A0x8c8c02d2fc8b802f!2sFood%20Affair%20-%20Veg%20Family%20Restaurant!5e0!3m2!1sen!2sin!4v1718792481677!5m2!1sen!2sin" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="brand">
+      <img src="assets/images/Jain_Food_House_logo.png" alt="Jain Food House logo">
+      <p>100% Jain cuisine — no onion, no garlic. Delivery only.</p>
+      <div class="buttons">
+        <a href="https://www.zomato.com/bangalore/jain-food-house-bannerghatta-road-bangalore" target="_blank">Zomato</a>
+        <a href="https://www.swiggy.com/city/bangalore/jain-food-court-vijaya-bank-colony-bilekahalli-rest532809" target="_blank">Swiggy</a>
+      </div>
+    </div>
+
+    <div class="brand">
+      <img src="assets/images/Wok-Of-Love-Final-Logo.png" alt="Wok Of Love logo">
+      <p>Pure‑veg Indo‑Chinese • Bold, fiery, flavor‑packed</p>
+      <div class="buttons">
+        <a href="https://www.zomato.com/bangalore/wok-of-love-bannerghatta-road-bangalore" target="_blank">Zomato</a>
+        <a href="https://www.swiggy.com/city/bangalore/wok-of-love-btm-4th-stage-arekere-rest966202" target="_blank">Swiggy</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="specialties">
+    <h2 class="carousel-title">Some of Our Specialties</h2>
+    <div class="carousel-wrapper">
       <img src="assets/images/Bhindi Do Pyaza.jpg" alt="Bhindi Do Pyaza">
       <img src="assets/images/Corn Cheese Balls.jpg" alt="Corn Cheese Balls">
       <img src="assets/images/Cream Of Mushroom.jpg" alt="Cream Of Mushroom">
@@ -219,19 +187,55 @@
       <img src="assets/images/Paneer Cheese Balls.jpg" alt="Paneer Cheese Balls">
       <img src="assets/images/Paneer Lababdar.jpg" alt="Paneer Lababdar">
       <img src="assets/images/Paneer Pudina Tikka.jpg" alt="Paneer Pudina Tikka">
-      <img src="assets/images/Paneer Tikka.jpg" alt="Paneer Tikka">
-      <img src="assets/images/Pulav Dal Makhni Combo.jpg" alt="Pulav Dal Makhni Combo">
-      <img src="assets/images/Punjabi Bhatinda Kofta.jpg" alt="Punjabi Bhatinda Kofta">
-      <img src="assets/images/Red Pasta.jpg" alt="Red Pasta">
-      <img src="assets/images/Stuffed Tomato Salad.jpg" alt="Stuffed Tomato Salad">
-      <img src="assets/images/Tandoori Platter.jpg" alt="Tandoori Platter">
-      <img src="assets/images/thali.jpg" alt="thali">
-      <img src="assets/images/Veg Biryani Combo 1.jpg" alt="Veg Biryani Combo 1">
-      <img src="assets/images/Veg Biryani Combo.jpg" alt="Veg Biryani Combo">
-      <img src="assets/images/Veg Fried Rice Combo.jpg" alt="Veg Fried Rice Combo">
+      <img src="assets/images/Paneer Tikka Masala.jpg" alt="Paneer Tikka Masala">
+      <img src="assets/images/Rajma Chawal.jpg" alt="Rajma Chawal">
+      <img src="assets/images/Stuffed Paratha.jpg" alt="Stuffed Paratha">
+      <img src="assets/images/Thali.jpg" alt="Thali">
       <img src="assets/images/Veg Hakka Noodles.jpg" alt="Veg Hakka Noodles">
-      <img src="assets/images/Veg Lollipop.jpg" alt="Veg Lollipop">
+      <img src="assets/images/Veg Kofta.jpg" alt="Veg Kofta">
+      <img src="assets/images/Veg Momos.jpg" alt="Veg Momos">
+      <img src="assets/images/Veg Pakora.jpg" alt="Veg Pakora">
+      <img src="assets/images/Veg Thali.jpg" alt="Veg Thali">
     </div>
   </section>
+  <!-- ===== OVERLAYS ===== -->
+  <div id="about" class="overlay" onclick="closeOverlay('about')">
+    <div class="overlay-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeOverlay('about')">&times;</button>
+      <h2>About Us</h2>
+      <p>
+        Rendezvous Foods & Lifestyle is a collective of pure vegetarian culinary brands that believe in flavor, faith, and freshness.
+        We proudly serve Jain, Vegan, Satvik, and Vaishnav options—bringing the best of India’s cultural diversity to your plate.
+      </p>
+    </div>
+  </div>
+
+  <div id="contact" class="overlay" onclick="closeOverlay('contact')">
+    <div class="overlay-content" onclick="event.stopPropagation()">
+      <button class="close-btn" onclick="closeOverlay('contact')">&times;</button>
+      <h2>Contact Us</h2>
+      <p><strong>Office Address:</strong><br>
+      89 Ambika Corner, 2nd Floor, 11th Main,<br>
+      BTM 4th Stage, Vijaya Bank Layout,<br>
+      Bengaluru, Karnataka 560076</p>
+      <p><strong>Email:</strong> <a href="mailto:foodaffair2024@gmail.com">foodaffair2024@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+919886299822">+91 98862 99822</a></p>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Rendezvous Foods & Lifestyle. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== INLINE JS for Overlays ===== -->
+  <script>
+    function showOverlay(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeOverlay(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
 </body>
 </html>
