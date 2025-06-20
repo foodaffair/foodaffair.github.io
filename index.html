@@ -116,6 +116,43 @@
       margin-bottom: 1rem;
       text-align: center;
     }
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  z-index: 9999;
+}
+
+
+.overlay-content {
+  background: #fffaf2;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  color: #6d4c41;
+  cursor: pointer;
+}
+.brand-header img {
+  max-height: 80px;
+  padding: 0.5rem 0;
+}
+
   </style>
 </head>
 <body>
@@ -129,7 +166,9 @@
 
   <section id="brands" class="brand-section">
     <div class="brand">
-      <img src="assets/images/food_affair_logo.png" alt="Food Affair logo">
+      <div class="brand-header" style="background:#000000;">
+  <img src="assets/images/food_affair_logo.png" alt="Food Affair logo">
+</div>
       <p>Dine‑in • Online • Jain, Vegan, Satvik options</p>
       <div class="buttons">
         <a href="http://food-affair.in" target="_blank">Website</a>
@@ -143,7 +182,9 @@
       </div>
     </div>
     <div class="brand">
-      <img src="assets/images/Jain_Food_House_logo.png" alt="Jain Food House logo">
+      <div class="brand-header" style="background:#5e684d;">
+  <img src="assets/images/Jain_Food_House_logo.png" alt="Jain Food House logo">
+</div>
       <p>100% Jain cuisine — no onion, no garlic. Delivery only.</p>
       <div class="buttons">
         <a href="https://www.zomato.com/bangalore/jain-food-house-bannerghatta-road-bangalore" target="_blank">Zomato</a>
@@ -152,7 +193,9 @@
     </div>
 
     <div class="brand">
-      <img src="assets/images/Wok-Of-Love-Final-Logo.png" alt="Wok Of Love logo">
+      <div class="brand-header" style="background:#ffe135;">
+            <img src="assets/images/Wok-Of-Love-Final-Logo.png" alt="Wok Of Love logo">
+        </div>
       <p>Pure‑veg Indo‑Chinese • Bold, fiery, flavor‑packed</p>
       <div class="buttons">
         <a href="https://www.zomato.com/bangalore/wok-of-love-bannerghatta-road-bangalore" target="_blank">Zomato</a>
