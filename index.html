@@ -46,41 +46,36 @@
       margin: auto;
     }
     .brand-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: space-between;
-    }
-    .brand {
-      flex: 1 1 30%;
-      background: #fffaf2;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-      padding: 1.5rem;
-      text-align: center;
-      transition: 0.3s ease;
-    }
-    .brand:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    }
-    .brand img {
-      max-width: 110px;
-      max-height: 110px;
-      object-fit: contain;
-      margin-bottom: 1rem;
-    }
-    .brand-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.brand {
+  flex: 1 1 30%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.brand:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.brand-header {
   padding: 1rem 1rem 0.5rem;
   text-align: center;
-  background-color: var(--brand-color, #ffffff); /* Optional if per-brand */
+  background-color: var(--brand-color, #ffffff); /* Specific per brand */
 }
 
 .brand-header img {
-  height: 100px;           /* Force visible height */
-  width: auto;             /* Maintain aspect ratio */
-  max-width: 90%;          /* Don’t overflow horizontally */
-  object-fit: contain;     /* Prevents distortion */
+  height: 120px;
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
   display: inline-block;
 }
 
@@ -184,8 +179,8 @@
   <header></header>
 
   <section id="brands" class="brand-section">
-    <div class="brand">
-  <div class="brand-header" style="background:#000000;">
+    <div class="brand" style="--brand-color:#000000;">
+  <div class="brand-header" >
     <img src="assets/images/food_affair_logo.png" alt="Food Affair logo">
   </div>
   <div class="brand-body">
@@ -203,8 +198,8 @@
   </div>
 </div>
 
-<div class="brand">
-  <div class="brand-header" style="background:#5e684d;">
+<div class="brand"  style="--brand-color:#5e684d;">
+  <div class="brand-header">
     <img src="assets/images/Jain_Food_House_logo.png" alt="Jain Food House logo">
   </div>
   <div class="brand-body">
@@ -216,8 +211,8 @@
   </div>
 </div>
 
-<div class="brand">
-  <div class="brand-header" style="background:#ffe135;">
+<div class="brand"  style="--brand-color:#ffe135;">
+  <div class="brand-header">
     <img src="assets/images/Wok-Of-Love-Final-Logo.png" alt="Wok Of Love logo">
   </div>
   <div class="brand-body">
